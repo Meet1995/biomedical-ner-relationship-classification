@@ -1,1 +1,1 @@
-# cis522-ner-relationship-classification
+# UMLS augmented biomedical-ner and relationship-classification model
