@@ -18,6 +18,7 @@ ipython_config.py
 # Data files
 *.txt
 *.ann
+*.zip
 
 # Results
 results/
