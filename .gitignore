@@ -19,6 +19,7 @@ ipython_config.py
 *.txt
 *.ann
 *.zip
+*.parquet
 
 # Results
 results/
