@@ -13,7 +13,6 @@ The file structure of this project is as follows:
         - `data-prep-baseline.ipynb`: This notebook contains code for preparing the data for training the baseline NER model.
         - `data-prep-flair.ipynb`: This notebook contains code for preparing the data for training the Flair-based NER model.
         - `umls-data-augmentation.ipynb`: This notebook contains code for augmenting the training data using UMLS concepts.
-    - `experiments`: This directory contains notebooks used for experimenting with different models and hyperparameters.
     - `models`: This directory contains notebooks used for training the models.
         - `ner`: This directory contains notebooks used for training the NER models.
             - `baseline`: This directory contains notebooks used for training the baseline NER model.
