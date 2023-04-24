@@ -1,17 +1,37 @@
 # UMLS augmented biomedical-ner and relationship-classification model
 
-This repository contains code and data for a natural language processing project. The project includes notebooks for experiments on data parsing, preprocessing, named entity recognition (NER), and relation extraction (REL). The code is organized into the following directory structure:
+This project contains code for training and evaluating various named entity recognition (NER) and relation extraction models.
 
-- `data`: This directory contains the data used in the project, including an annotation guideline and a README file.
-    - `ADE_Annotation_Guideline_final.pdf`: This is a PDF file containing the annotation guideline for the project. It describes how the data was annotated and provides instructions for annotating new data.
+## File Structure
 
-- `notebooks`: This directory contains Jupyter notebooks for running the experiments. It includes a subdirectory called `experiments`, which contains the notebooks organized by task. Here are brief descriptions of the notebooks:
-    - `data-parser.ipynb`: This notebook is used to parse the data used in the project. It includes code for cleaning, normalizing, and transforming the data into a format that can be used in downstream tasks.
-    - `data-prep-baseline.ipynb`: This notebook is used to prepare the data for use in a baseline NER model. It includes code for splitting the data into training and testing sets, generating features for the model, and performing other preprocessing steps.
-    - `data-prep-flair.ipynb`: This notebook is used to prepare the data for use in a NER model that uses Flair embeddings. It includes code for generating embeddings, splitting the data, and performing other preprocessing steps.
-    - `ner-baseline.ipynb`: This notebook is used to train and evaluate a baseline NER model. It includes code for initializing the model, training it on the training data, and evaluating its performance on the testing data.
-    - `ner-lstm-crf.ipynb`: This notebook is used to train and evaluate a NER model that uses an LSTM-CRF architecture. It includes code for initializing the model, training it on the training data, and evaluating its performance on the testing data.
-    - `ner-transformer-crf.ipynb`: This notebook is used to train and evaluate a NER model that uses a Transformer-CRF architecture. It includes code for initializing the model, training it on the training data, and evaluating its performance on the testing data.
-    - `preprocessing.ipynb`: This notebook is used to perform general preprocessing on the data. It includes code for tokenizing the text, converting it to lowercase, and removing stop words.
-    - `rel-baseline.ipynb`: This notebook is used to train and evaluate a baseline REL model. It includes code for initializing the model, training it on the training data, and evaluating its performance on the testing data.
-    - `rel-flair-embeddings.ipynb`: This notebook is used to train and evaluate a REL model that uses Flair embeddings. It includes code for generating embeddings, initializing the model, training it on the training data, and evaluating its performance on the testing data.
+The file structure of this project is as follows:
+
+- `data`: This directory contains the annotation guidelines in the `ADE_Annotation_Guideline_final.pdf` file.
+- `notebooks`: This directory contains all Jupyter notebooks used in the project.
+    - `data_prep`: This directory contains notebooks used for preparing the data for training the models.
+        - `data-parser.ipynb`: This notebook contains code for parsing the raw data files.
+        - `data-prep-baseline.ipynb`: This notebook contains code for preparing the data for training the baseline NER model.
+        - `data-prep-flair.ipynb`: This notebook contains code for preparing the data for training the Flair-based NER model.
+        - `umls-data-augmentation.ipynb`: This notebook contains code for augmenting the training data using UMLS concepts.
+    - `experiments`: This directory contains notebooks used for experimenting with different models and hyperparameters.
+    - `models`: This directory contains notebooks used for training the models.
+        - `ner`: This directory contains notebooks used for training the NER models.
+            - `baseline`: This directory contains notebooks used for training the baseline NER model.
+                - `ner-baseline.ipynb`: This notebook contains code for training the baseline NER model.
+            - `lstm-crf`: This directory contains notebooks used for training the LSTM-CRF NER models.
+                - `ner-lstm-crf.ipynb`: This notebook contains code for training the LSTM-CRF NER model.
+                - `ner-lstm-crf-umls-augmented.ipynb`: This notebook contains code for training the LSTM-CRF NER model with UMLS-augmented data.
+                - `ner-lstm-crf-umls-augmented-weight_exp.ipynb`: This notebook contains code for training the LSTM-CRF NER model with UMLS-augmented data and weight experimentation.
+            - `transformer-crf`: This directory contains notebooks used for training the Transformer-CRF NER models.
+                - `ner-transformer-crf.ipynb`: This notebook contains code for training the Transformer-CRF NER model.
+                - `ner-transformer-crf-augmented.ipynb`: This notebook contains code for training the Transformer-CRF NER model with UMLS-augmented data.
+                - `ner-transformer-crf-augmented-weight_exp.ipynb`: This notebook contains code for training the Transformer-CRF NER model with UMLS-augmented data and weight experimentation.
+        - `relation_extractor`: This directory contains notebooks used for training the relation extraction models.
+            - `rel-baseline.ipynb`: This notebook contains code for training the baseline relation extraction model.
+            - `rel-flair.ipynb`: This notebook contains code for training the Flair-based relation extraction model.
+- `README.md`: This file, containing the project overview and file structure.
+
+## Usage
+
+Clone this repository and run the Jupyter notebooks in the order specified by their directory names. Note that some notebooks may require additional dependencies, which can be installed using the provided `requirements.txt` file.
+
