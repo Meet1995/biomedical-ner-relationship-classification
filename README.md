@@ -28,9 +28,7 @@ The file structure of this project is as follows:
         - `relation_extractor`: This directory contains notebooks used for training the relation extraction models.
             - `rel-baseline.ipynb`: This notebook contains code for training the baseline relation extraction model.
             - `rel-flair.ipynb`: This notebook contains code for training the Flair-based relation extraction model.
-- `README.md`: This file, containing the project overview and file structure.
 
 ## Usage
 
-Clone this repository and run the Jupyter notebooks in the order specified by their directory names. Note that some notebooks may require additional dependencies, which can be installed using the provided `requirements.txt` file.
-
+Clone this repository and run the Jupyter notebooks in the order specified by their directory names. Note that some notebooks may require additional dependencies.
