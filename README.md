@@ -6,6 +6,7 @@ This project contains code for training and evaluating various named entity reco
 ## File Structure
 The file structure of this project is as follows:
 
+- `assets`: This directory contains the images used in the README.
 - `data`: This directory contains the annotation guidelines in the `ADE_Annotation_Guideline_final.pdf` file. This is from the n2c2 shared task.
 - `notebooks`: This directory contains all Jupyter notebooks used in the project.
     - `data_prep`: This directory contains notebooks used for preparing the data for training the models.
