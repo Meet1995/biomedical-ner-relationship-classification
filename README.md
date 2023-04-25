@@ -37,7 +37,7 @@ Harvard Medical School's "n2c2 adverse drug events (ADE) and medication extracti
 
 The following figure shows the entity and relationship class distributions for the train and test sets after parsing (further details on the parsing can be found in the report). As can be seen, there is a class imbalance issue, with ADE and Duration being among the least represented for both the entity and relationship tags.
 
-![Class Distributions]("./assets/class-distributions.png")
+<img src="./assets/class-distributions.png" alt="grid"/>
 
 ## Usage
 
