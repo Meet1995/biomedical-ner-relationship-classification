@@ -40,10 +40,16 @@ The following figure shows the entity and relationship tag class distributions f
 ## Dependencies
 The models have been trained using the [flair](https://github.com/flairNLP/flair) library. This is a powerful state-of-the-art natural language processing (NLP) library built directly on PyTorch, with special support for biomedical data. It also includes a text embedding library with support to use and combine different word and document embeddings, including Flair embeddings.
 
-The `ColumnCorpus` class to load data into flair. For an example on how to do the same, see [here](https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset). The following is an example of what a data sample looks like for the NER task after loading it using `ColumnCorpus`:
+The `ColumnCorpus` class is used to load our data into flair. For an example on how to do the same, see [here](https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset). 
+
+The following is an example of what a data sample looks like for the NER task after loading it using `ColumnCorpus`:
+
 `Sentence[38]: "Since no new infection was found this was presumed [ * * 12-26 * * ] steroids and the leukocytosis improved with prednisone taper . WBC 12 on day of discharge . Hyperglycemia : Patient is not known" → ["steroids"/Drug, "leukocytosis"/ADE, "prednisone"/Drug, "Hyperglycemia"/ADE]`
 
-We can see the sample text and each entity's text/tag (eg. "steroids"/Drug). Likewise, the following is an example of what a data sample looks like for the relationship extraction task after loading it using `ColumnCorpus`:
+We can see the sample text and each entity's text/tag (eg. "steroids"/Drug). 
+
+The following is an example of what a data sample looks like for the relationship extraction task after loading it using `ColumnCorpus`:
+
 `Sentence[29]: "He also may have recurrent seizures which should be treated with ativan IV or IM and do not neccessarily indicate patient needs to return to hospital unless they continue" → ["recurrent seizures"/Reason, "recurrent seizures -> ativan"/Reason-Drug, "ativan"/Drug, "IV"/Route, "IM"/Route]`
 
 We can see the sample text and each entity and relationship's text tag (eg. "recurrent seizures"/Reason for the entity and "recurrent seizures -> ativan"/Reason-Drug for the relationship).
