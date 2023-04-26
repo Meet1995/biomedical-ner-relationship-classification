@@ -37,7 +37,7 @@ The following figure shows the entity and relationship tag class distributions f
 
 <img src="./assets/class-distributions.png" alt="grid"/>
 
-## Dependencies
+## flairNLP Dependency
 The models have been trained using the [flair](https://github.com/flairNLP/flair) library. This is a powerful state-of-the-art natural language processing (NLP) library built directly on PyTorch, with special support for biomedical data. It also includes a text embedding library with support to use and combine different word and document embeddings, including Flair embeddings.
 
 The `ColumnCorpus` class is used to load our data into flair. For an example on how to do the same, see [here](https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset). 
