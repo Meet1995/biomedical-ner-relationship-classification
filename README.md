@@ -52,7 +52,7 @@ The following is an example of what a data sample looks like for the relationshi
 
 `Sentence[29]: "He also may have recurrent seizures which should be treated with ativan IV or IM and do not neccessarily indicate patient needs to return to hospital unless they continue" → ["recurrent seizures"/Reason, "recurrent seizures -> ativan"/Reason-Drug, "ativan"/Drug, "IV"/Route, "IM"/Route]`
 
-We can see the sample text and each entity and relationship's text tag (eg. "recurrent seizures"/Reason for the entity and "recurrent seizures -> ativan"/Reason-Drug for the relationship).
+We can see the sample text and each entity and relationship's text tag (eg. "recurrent seizures"/Reason for an entity, and "recurrent seizures -> ativan"/Reason-Drug for a relationship).
 
 ## Usage
 
