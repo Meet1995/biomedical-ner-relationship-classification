@@ -14,7 +14,7 @@ The file structure of this project is as follows:
         - `data-prep-baseline.ipynb`: This notebook contains code for preparing the data for training the baseline NER model.
         - `data-prep-flair.ipynb`: This notebook contains code for preparing the data for training the Flair-based NER model.
         - `umls-data-augmentation.ipynb`: This notebook contains code for augmenting the training data using UMLS concepts.
-    - `models`: This directory contains notebooks used for training the models.
+    - `training`: This directory contains notebooks used for training the models.
         - `ner`: This directory contains notebooks used for training the NER models.
             - `baseline`: This directory contains notebooks used for training the baseline NER model.
                 - `ner-baseline.ipynb`: This notebook contains code for training the baseline NER model.
@@ -29,6 +29,8 @@ The file structure of this project is as follows:
         - `relation_extractor`: This directory contains notebooks used for training the relation extraction models.
             - `rel-baseline.ipynb`: This notebook contains code for training the baseline relation extraction model.
             - `rel-flair.ipynb`: This notebook contains code for training the Flair-based relation extraction model.
+    - `inference`
+        - `inference-example-ner-rel.ipynb`: This notebook gives an example of how to load the trained NER and Relation models and get predictions from them.
 
 ## Dataset
 Harvard Medical School's "n2c2 adverse drug events (ADE) and medication extraction in the electronic health records" dataset is being used in this project. The dataset cannot be included in this repository as it is not open-source (we have had to sign agreements to gain access to it). However, it is noted that the dataset includes 303 de-identified textual medical records for training and 202 for testing from the MIMIC-III database. For each medical record text file there is also an annotation file with domain expert annotated entity tags and relationship tags. The entity tags include drug, strength, dosage, duration, frequency, form, route, reason, and ADE entity tags, while the relationship tags include strength-drug, dosage-drug, duration-drug, frequency-drug, form-drug, route-drug, reason-drug, and ADE-drug relationship tags. For example, the line "T3 ADE 11270 11293 Abdominal wall hematoma" in the annotation file indicates that the entity with ID "T3" is of type "ADE", occurs from index 11270 to index 11293 in the associated medical record text file, and has the text "Abdominal wall hematoma". Likewise, the line "R1 ADE-Drug Arg1:T3 Arg2:T4" in the annotation file indicates that the relationship with ID "R1" is of type "ADE-Drug", and is between entities with IDs "T3" and "T4".
@@ -40,13 +42,13 @@ The following figure shows the entity and relationship tag class distributions f
 ## flairNLP Dependency
 The models have been trained using the [flair](https://github.com/flairNLP/flair) library. This is a powerful state-of-the-art natural language processing (NLP) library built directly on PyTorch, with special support for biomedical data. It also includes a text embedding library with support to use and combine different word and document embeddings, including Flair embeddings.
 
-The `ColumnCorpus` class is used to load our data into flair. For an example on how to do the same, see [here](https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset). 
+The `ColumnCorpus` class is used to load our data into flair. For an example on how to do the same, see [here](https://flairnlp.github.io/docs/tutorial-training/how-to-load-custom-dataset).
 
 The following is an example of what a data sample looks like for the NER task after loading it using `ColumnCorpus`:
 
 `Sentence[38]: "Since no new infection was found this was presumed [ * * 12-26 * * ] steroids and the leukocytosis improved with prednisone taper . WBC 12 on day of discharge . Hyperglycemia : Patient is not known" → ["steroids"/Drug, "leukocytosis"/ADE, "prednisone"/Drug, "Hyperglycemia"/ADE]`
 
-We can see the sample text and each entity's text/tag (eg. "steroids"/Drug). 
+We can see the sample text and each entity's text/tag (eg. "steroids"/Drug).
 
 The following is an example of what a data sample looks like for the relationship extraction task after loading it using `ColumnCorpus`:
 
